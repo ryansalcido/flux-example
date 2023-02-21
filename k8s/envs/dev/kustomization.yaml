@@ -9,7 +9,7 @@ components:
 
 secretGenerator:
   - name: registry1-creds-enc
-    namespace: flux-example
+    namespace: bigbang
     behavior: create
     files:
       - values.yaml=registry1-creds-enc.yaml
