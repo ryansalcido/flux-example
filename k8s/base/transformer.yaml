@@ -1,0 +1,13 @@
+nameReference:
+  - kind: ConfigMap
+    fieldSpecs:
+      - path: spec/valuesFrom/name
+        kind: HelmRelease
+      - path: spec/template/spec/volumes/configMap/name
+        kind: Deployment
+  - kind: Secret
+    fieldSpecs:
+      - path: spec/valuesFrom/name
+        kind: HelmRelease
+      - path: spec/template/spec/volumes/secret/secretName
+        kind: Deployment

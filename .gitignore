@@ -1,0 +1,22 @@
+.env
+
+# age key
+flux-example-key.txt
+
+# Kubeconfig
+.kube/config
+kubeconfig.yaml
+
+# Generated docs
+*.html
+
+# Keycloak json realm files
+realm.json
+k3d/cluster.yaml
+
+# Temporary files
+*.tmp
+tmp/
+
+# MacOS
+.DS_Store
