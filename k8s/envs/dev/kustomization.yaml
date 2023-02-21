@@ -13,3 +13,14 @@ secretGenerator:
     behavior: create
     files:
       - values.yaml=registry1-creds-enc.yaml
+
+patchesStrategicMerge:
+  - |-
+    apiVersion: source.toolkit.fluxcd.io/v1beta2
+    kind: GitRepository
+    metadata:
+      name: bigbang
+      namespace: bigbang
+    spec:
+      ref:
+        tag: 1.53.0
