@@ -25,7 +25,7 @@ spec:
     cleanupOnFail: false
   valuesFrom:
     - kind: Secret
-      name: registry1-creds-enc
+      name: registry1-creds
     - kind: ConfigMap
       name: cluster-auditor-values
     - kind: ConfigMap
