@@ -2,10 +2,6 @@
 
 set -euo pipefail
 
-kubectl cluster-info
-
-export SOPS_AGE_KEY_FILE=flux-example-key.txt
-
 SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 cd "$SCRIPT_DIR"
 
@@ -13,8 +9,7 @@ function usage() {
   cat <<EOF
 $(basename "$0") -e <ENVIRONMENT NAME>
 
- -e
-   environment/overlay to deploy
+ -e       environment/overlay to deploy
 EOF
 }
 
@@ -35,8 +30,12 @@ if [[ -z "${ENVIRONMENT_NAME-}" ]]; then
   exit 1
 fi
 
+kubectl cluster-info
+
+export SOPS_AGE_KEY_FILE=flux-example-key.txt
+
 # Bootstrap the environment
-sops -d bootstrap.enc.yaml | kubectl apply -f-
+sops -d bootstrap.enc.yaml | kubectl apply -f -
 
 # Install Flux
 echo >&2 "Installing Flux ..."
