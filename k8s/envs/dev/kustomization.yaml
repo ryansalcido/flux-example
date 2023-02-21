@@ -6,3 +6,10 @@ resources:
 
 components:
   - ../../components/bigbang
+
+secretGenerator:
+  - name: registry1-creds-enc
+    namespace: flux-example
+    behavior: create
+    files:
+      - values.yaml=registry1-creds-enc.yaml

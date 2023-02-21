@@ -1,15 +1,4 @@
 ---
-apiVersion: source.toolkit.fluxcd.io/v1beta2
-kind: GitRepository
-metadata:
-  name: environment-repo
-  namespace: flux-example
-spec:
-  interval: 10m
-  url: https://github.com/ryansalcido/flux-example.git
-  ref:
-    branch: main
----
 apiVersion: kustomize.toolkit.fluxcd.io/v1beta2
 kind: Kustomization
 metadata:
@@ -21,5 +10,5 @@ spec:
     kind: GitRepository
     name: environment-repo
     namespace: flux-example
-  path: ./k8s/base
+  path: ./k8s/components/bigbang/configs
   prune: true

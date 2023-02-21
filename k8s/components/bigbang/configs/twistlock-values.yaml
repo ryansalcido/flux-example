@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: twistlock-values
+  namespace: bigbang
+data:
+  values.yaml: |-
+    twistlock:
+      enabled: false

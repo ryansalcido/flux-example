@@ -1,0 +1,48 @@
+---
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: bigbang
+  namespace: bigbang
+spec:
+  interval: 2m
+  timeout: 30m
+  chart:
+    spec:
+      interval: 2m
+      chart: chart
+      sourceRef:
+        kind: GitRepository
+        name: bigbang
+        namespace: bigbang
+  test:
+    enable: false
+  install:
+    remediation:
+      retries: -1
+  rollback:
+    timeout: 30m
+    cleanupOnFail: false
+  valuesFrom:
+    - kind: Secret
+      name: registry1-creds-enc
+    - kind: ConfigMap
+      name: clusterAuditor-values
+    - kind: ConfigMap
+      name: eckoperator-values
+    - kind: ConfigMap
+      name: fluentbit-values
+    - kind: ConfigMap
+      name: gatekeeper-values
+    - kind: ConfigMap
+      name: istio-values
+    - kind: ConfigMap
+      name: jaeger-values
+    - kind: ConfigMap
+      name: kiali-values
+    - kind: ConfigMap
+      name: logging-values
+    - kind: ConfigMap
+      name: monitoring-values
+    - kind: ConfigMap
+      name: twistlock-values

@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: clusterAuditor-values
+  namespace: bigbang
+data:
+  values.yaml: |-
+    clusterAuditor:
+      enabled: false

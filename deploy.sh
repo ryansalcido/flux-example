@@ -40,7 +40,7 @@ sops -d bootstrap.enc.yaml | kubectl apply -f-
 
 # Install Flux
 echo >&2 "Installing Flux ..."
-kubectl apply -k flux/envs/${ENVIRONMENT_NAME}
+kubectl apply -k "k8s/flux/envs/${ENVIRONMENT_NAME}"
 
 # Deploy the environment
 echo >&2 "Deploying environment ${ENVIRONMENT_NAME} ..."

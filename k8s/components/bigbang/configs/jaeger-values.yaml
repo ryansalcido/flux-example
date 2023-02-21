@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: jaeger-values
+  namespace: bigbang
+data:
+  values.yaml: |-
+    jaeger:
+      enabled: false
