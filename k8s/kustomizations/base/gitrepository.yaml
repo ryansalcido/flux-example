@@ -23,3 +23,8 @@ spec:
     namespace: flux-example
   path: ./k8s/base
   prune: true
+  decryption:
+    provider: sops
+    secretRef:
+      name: sops-age
+
