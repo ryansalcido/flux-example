@@ -8,7 +8,6 @@ resources:
 components:
   - ../../components/bigbang
 
-
 patchesStrategicMerge:
   - |-
     apiVersion: source.toolkit.fluxcd.io/v1beta2

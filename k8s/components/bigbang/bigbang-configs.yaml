@@ -2,7 +2,7 @@
 apiVersion: kustomize.toolkit.fluxcd.io/v1beta2
 kind: Kustomization
 metadata:
-  name: bigbang
+  name: bigbang-common-configs
   namespace: flux-example
 spec:
   interval: 10m
