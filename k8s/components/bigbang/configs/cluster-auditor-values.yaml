@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: clusterAuditor-values
+  name: cluster-auditor-values
   namespace: bigbang
 data:
   values.yaml: |-

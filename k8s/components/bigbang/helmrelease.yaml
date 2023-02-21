@@ -27,7 +27,7 @@ spec:
     - kind: Secret
       name: registry1-creds-enc
     - kind: ConfigMap
-      name: clusterAuditor-values
+      name: cluster-auditor-values
     - kind: ConfigMap
       name: eckoperator-values
     - kind: ConfigMap
