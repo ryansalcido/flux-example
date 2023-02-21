@@ -4,7 +4,7 @@ set -euo pipefail
 
 kubectl cluster-info
 
-export SOPS_AGE_KEY_FILE=~/flux-example-key.txt
+export SOPS_AGE_KEY_FILE=flux-example-key.txt
 
 SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 cd "$SCRIPT_DIR"
